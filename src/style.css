@@ -29,3 +29,19 @@ a {
 a:hover {
     color: var(--link);
 }
+
+.container {
+    padding: 0 16px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+main > .container {
+    max-width: 680px;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 64px;
+    }
+}
