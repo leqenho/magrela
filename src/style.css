@@ -5,6 +5,7 @@
     --lighten: #F5F5F5;
     --darken: #333333;
     --link: #6A26CD;
+    --shadow: rgb(0 0 0 / 20%) 0px 3px 3px -2px, rgb(0 0 0 / 14%) 0px 3px 4px 0px, rgb(0 0 0 / 12%) 0px 1px 8px 0px;
 }
 
 * {
@@ -44,4 +45,32 @@ main > .container {
     .container {
         padding: 0 64px;
     }
+}
+
+header {
+    box-shadow: var(--shadow);
+}
+
+header > .container,
+footer > .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container .logo {
+    display: flex;
+    align-items: center;
+}
+
+.container .logo .icon svg {
+    width: 45px;
+}
+
+.container .logo .brand {
+    font-size: 30px;
+    font-weight: 100;
+    margin-left: 16px;
 }
