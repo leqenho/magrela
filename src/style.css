@@ -59,6 +59,16 @@ footer > .container {
     flex-direction: column-reverse;
 }
 
+footer {
+    background-color: var(--darken);
+    color: var(--lighten);
+    margin-top: 20px;
+}
+
+footer > .container > .copy {
+    margin-top: 10px;
+}
+
 .container .logo {
     display: flex;
     align-items: center;
@@ -88,5 +98,9 @@ footer > .container {
     footer > .container {
         text-align: left;
         flex-direction: row;
+    }
+
+    footer > .container > .copy {
+        margin-top: 0;
     }
 }
