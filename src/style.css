@@ -41,12 +41,6 @@ main > .container {
     max-width: 680px;
 }
 
-@media (min-width: 1024px) {
-    .container {
-        padding: 0 64px;
-    }
-}
-
 header {
     box-shadow: var(--shadow);
 }
@@ -56,8 +50,13 @@ footer > .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer > .container {
+    text-align: center;
+    flex-direction: column-reverse;
 }
 
 .container .logo {
@@ -73,4 +72,21 @@ footer > .container {
     font-size: 30px;
     font-weight: 100;
     margin-left: 16px;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 64px;
+    }
+
+    header > .container,
+    footer > .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    footer > .container {
+        text-align: left;
+        flex-direction: row;
+    }
 }
