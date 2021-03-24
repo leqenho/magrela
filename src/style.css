@@ -1,11 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap');
 
 :root {
+    --dark-blue: #283593;
+    --light-blue: #1e88e5;
     --white: #FFFFFF;
-    --lighten: #F5F5F5;
-    --darken: #333333;
-    --link: #6A26CD;
+    --light-100: #DEDEDE;
+    --light-200: #999999;
+    --light-300: #666666;
+
+    --darken-100: #3D3D3D;
+    --darken-200: #363636;
+    --darken-300: #282828;
+    --darken-400: #202020;
+    --darken-500: #171717;
+    --black: #000000;
+
+    --bg_body: var(--white);
+    --bg_header: var(--white);
+    --bg_footer: var(--darken-500);
+    --font_default: var(--darken-500);
+    --font_footer: var(--light-100);
+    --font_link: var(--dark-blue);
+
+    --bg_switch: var(--light-100);
+    --switch_bullet: var(--darken-100);
+    --switch_icon: var(--darken-100);
+
     --shadow: rgb(0 0 0 / 20%) 0px 3px 3px -2px, rgb(0 0 0 / 14%) 0px 3px 4px 0px, rgb(0 0 0 / 12%) 0px 1px 8px 0px;
+}
+
+[data-theme="dark"] {
+    --bg_body: var(--darken-500);
+    --bg_header: var(--darken-300);
+    --bg_footer: var(--darken-300);
+    --font_default: var(--light-100);
+    --font_link: var(--light-blue);
+
+    --bg_switch: var(--darken-500);
+    --switch_bullet: var(--light-100);
+    --switch_icon: var(--light-100);
 }
 
 * {
@@ -16,19 +49,7 @@
 
 body {
     font-family: "Open Sans", sans-serif;
-    background-color: var(--white);
-    color: var(--darken);
-}
-
-a {
-    cursor: pointer;
-    text-decoration: none;
-    color: var(--darken);
-    transition: color 0.15s;
-}
-
-a:hover {
-    color: var(--link);
+    background-color: var(--bg_body);
 }
 
 .container {
@@ -41,26 +62,58 @@ main > .container {
     max-width: 680px;
 }
 
+main .heading1 {
+    margin-top: 25px;
+    color: var(--font_default);
+}
+
+main img {
+    width: calc(100% + 32px); /*32px - são os padings laterais*/
+    margin-left: -16px; /* -16px coloca a imagem contralizada no container */
+    margin-top: 10px;
+}
+
+main p, main i {
+    display: block;
+    margin-top: 10px;
+    letter-spacing: 0.4px;
+    line-height: 1.3;
+    color: var(--font_default);
+}
+
+main i > a {
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.15s;
+    color: var(--font_link);
+}
+
+main i > a:hover {
+    opacity: 0.8;
+}
+
 header {
     box-shadow: var(--shadow);
+    background-color: var(--bg_header);
+    color: var(--font_default);
 }
 
 #toggleTheme { display: none; }
 #toggleTheme:checked + label {
-    background-color: var(--darken);
-}
-#toggleTheme:checked + label > .themeSwitch {
-    right: calc(100% - 32px);
-}
-#toggleTheme:checked + label > .themeSwitch {
-    background-color: var(--lighten);
-}
-#toggleTheme:checked + label > svg {
-    fill: var(--lighten);
+    background-color: var(--bg_switch);
 }
 
-.toggleTheme > label {
-    background-color: var(--lighten);
+#toggleTheme:checked + label > .themeSwitch {
+    right: calc(100% - 32px);
+    background-color: var(--switch_bullet);
+}
+
+#toggleTheme:checked + label > svg {
+    fill: var(--switch_icon);
+}
+
+.toggleTheme > label {    
+    background-color: var(--bg_switch);
     padding: 8px 12px;
     border-radius: 30px;
     user-select: none;
@@ -70,7 +123,7 @@ header {
 
 .toggleTheme > label > svg {
     width: 16px;
-    fill: var(--darken);
+    fill: var(--switch_icon);
 }
 
 .toggleTheme > label > svg:first-child {
@@ -85,7 +138,7 @@ header {
     border-radius: 50px;
     width: 25px;
     height: 25px;
-    background-color: var(--darken);
+    background-color: var(--switch_bullet);
     transition: left 0.15s, right 0.15s;
 }
 
@@ -104,9 +157,9 @@ footer > .container {
 }
 
 footer {
-    background-color: var(--darken);
-    color: var(--lighten);
+    background-color: var(--bg_footer);
     margin-top: 20px;
+    color: var(--font_footer);
 }
 
 footer > .container > .copy {
@@ -120,6 +173,7 @@ footer > .container > .copy {
 
 .container .logo .icon svg {
     width: 45px;
+    fill: var(--font_default);
 }
 
 .container .logo .brand {
@@ -137,6 +191,11 @@ footer > .container > .copy {
     footer > .container {
         padding-top: 20px;
         padding-bottom: 20px;
+    }
+
+    main img {
+        width: calc(100% + 128px); /* 128px são os paddings laterais */
+        margin-left: -64px; /* -64px coloca a imagem centralizada no container */
     }
 
     footer > .container {
