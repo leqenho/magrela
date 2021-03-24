@@ -4,6 +4,7 @@
 #### _Site simples sobre a história da bicicleta no Brasil_
 ## Sobre
     Um projeto simples pra treinar o uso do dark mode
+[Magrela web site](https://leqenho.github.io/magrela/)
 
 ## Features
 
