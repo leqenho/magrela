@@ -45,6 +45,50 @@ header {
     box-shadow: var(--shadow);
 }
 
+#toggleTheme { display: none; }
+#toggleTheme:checked + label {
+    background-color: var(--darken);
+}
+#toggleTheme:checked + label > .themeSwitch {
+    right: calc(100% - 32px);
+}
+#toggleTheme:checked + label > .themeSwitch {
+    background-color: var(--lighten);
+}
+#toggleTheme:checked + label > svg {
+    fill: var(--lighten);
+}
+
+.toggleTheme > label {
+    background-color: var(--lighten);
+    padding: 8px 12px;
+    border-radius: 30px;
+    user-select: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggleTheme > label > svg {
+    width: 16px;
+    fill: var(--darken);
+}
+
+.toggleTheme > label > svg:first-child {
+    margin-right: 6px;
+}
+
+.toggleTheme > label > .themeSwitch {
+    position: absolute;
+    transform: translateY(-50%);
+    right: 8px;
+    top: 50%;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    background-color: var(--darken);
+    transition: left 0.15s, right 0.15s;
+}
+
 header > .container,
 footer > .container {
     display: flex;
