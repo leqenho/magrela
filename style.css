@@ -182,6 +182,22 @@ footer > .container > .copy {
     margin-left: 16px;
 }
 
+.backToTop {
+    position: fixed;
+    right: 16px;
+    bottom: 90px;
+
+    background-color: var(--white);
+    border: 0;
+    padding: 8px;
+    font-size: 1.6rem;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    outline: 0;
+}
+
 @media (min-width: 1024px) {
     .container {
         padding: 0 64px;
@@ -205,5 +221,9 @@ footer > .container > .copy {
 
     footer > .container > .copy {
         margin-top: 0;
+    }
+
+    .backToTop{
+        right: 64px;
     }
 }
